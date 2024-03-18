@@ -1,0 +1,21 @@
+{
+  "name": "my-template",
+  "author": "Aziz Sobirov",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --port 3000",
+    "host": "astro dev --host --port 3000 ",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@antfu/utils": "^0.7.7",
+    "astro": "^4.2.6",
+    "sass": "^1.71.0",
+    "unimport": "^3.7.1"
+  }
+}

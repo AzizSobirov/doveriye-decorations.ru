@@ -1,0 +1,21 @@
+---
+interface Props {
+  class?: string;
+  src: string;
+  alt?: string;
+  only?: boolean;
+}
+const { class: classname, src, alt = "", only = false, ...rest } = Astro.props;
+const url = `/assets/img/${src}`;
+---
+
+{
+  only ? (
+    <img class:list={classname} src={url} alt={alt} {...rest} />
+  ) : (
+    <div class:list={classname} {...rest}>
+      <img src={url} alt={alt} />
+      <slot />
+    </div>
+  )
+}

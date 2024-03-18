@@ -1,0 +1,31 @@
+---
+import { products } from "../index.store";
+
+const formatPrice = (price: number) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+---
+
+<TheSection name="offer">
+  <H4>Возможно, вас также заинтересует</H4>
+  <div class="offer__products">
+    {
+      products.slice(0, 4).map((item) => (
+        <div class="offer__product">
+          <a href="/product" class="offer__product-img">
+            <Img src={item.img} only />
+          </a>
+          <div class="offer__product-info">
+            <a href="/product">{item.title}</a>
+            <H5>{formatPrice(item.price)} Р</H5>
+            <Button
+              variant="black"
+              label="КУПИТЬ"
+              action="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</TheSection>

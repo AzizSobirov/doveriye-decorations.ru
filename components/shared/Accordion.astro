@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  icon?: string;
+}
+
+const { title, icon = "dark" } = Astro.props;
+---
+
+<div class="uaccordion">
+  <div class="uaccordion__header">
+    <H4>{title}</H4>
+    <div class="uaccordion__header-icon">
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="20"
+          fill={icon === "dark" ? "white" : "#d9d9d9"}></circle>
+        <path
+          d="M21.6762 9V18.3238H31V21.7286H21.6762V31H18.2714V21.7286H9V18.3238H18.2714V9H21.6762Z"
+          fill={icon === "dark" ? "currentColor" : "white"}></path>
+      </svg>
+    </div>
+  </div>
+  <div class="uaccordion__body">
+    <div class="uaccordion__content">
+      <slot />
+    </div>
+    <slot name="footer" />
+  </div>
+</div>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  main?: boolean;
+}
+
+const { main = false } = Astro.props;
+---
+
+<TheSection name={main ? "process --main" : "process"}>
+  <H3>Как мы работаем</H3>
+  <ul class="process__list">
+    <li class="process__item">
+      <div class="process__item-order">
+        <H4>01</H4>
+      </div>
+      <H4>Заявка</H4>
+      <P>Оставьте заявку любым удобным для Вас способом</P>
+    </li>
+    <li class="process__item">
+      <div class="process__item-order">
+        <H4>02</H4>
+      </div>
+      <H4>Консультация</H4>
+      <P>Оговариваем детали нашей встречи</P>
+    </li>
+    <li class="process__item">
+      <div class="process__item-order">
+        <H4>03</H4>
+      </div>
+      <H4>Встреча и оценка</H4>
+      <P>Быстрая и точная оценка Ваших часов</P>
+    </li>
+    <li class="process__item">
+      <div class="process__item-order">
+        <H4>04</H4>
+      </div>
+      <H4>Выплата</H4>
+      <P>Оплата наличными без бумажной волокиты</P>
+    </li>
+  </ul>
+</TheSection>

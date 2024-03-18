@@ -1,0 +1,49 @@
+---
+interface Props {
+  class?: string;
+  id?: string;
+  title?: string;
+}
+
+const { class: classname, title = "Продайте украшения", ...rest } = Astro.props;
+
+const generateUniqueId = (): string => {
+  const randomNumber = Math.floor(Math.random() * 1000) + 1;
+  // Generate random number between 1 and 1000
+  const paddedNumber = randomNumber.toString().padStart(3, "0");
+  // Pad the number with leading zeros if necessary
+  return `file-${paddedNumber}`;
+};
+
+const uniqueId = generateUniqueId();
+---
+
+<form class="form" class:list={classname} {...rest}>
+  <H3>{title}</H3>
+  <P>Узнайте цену своих часов всего за 15 минут</P>
+  <input
+    type="text"
+    name="name"
+    id="name"
+    placeholder="Ваше имя"
+    minlength="3"
+    required
+  />
+  <input
+    type="text"
+    class="v-mask"
+    name="phone"
+    id="phone"
+    placeholder="Номер телефона"
+    required
+  />
+  <label for={uniqueId} id="file-upload">
+    <input type="file" name="file" id={uniqueId} />
+    <Img src="icons/file.svg" only />
+    <span class="sm:text-xl">Добавить фото</span>
+  </label>
+  <Button type="submit" label="ПРОДАТЬ УКРАШЕНИЯ" />
+  <div class="text-sm">
+    Отправляя заявку я даю согласие на обработку <br /> персональных данных
+  </div>
+</form>

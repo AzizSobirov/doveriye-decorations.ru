@@ -1,0 +1,121 @@
+$breakpoints: (
+  "3xl": 1680px,
+  "2xl": 1440px,
+  "xl": 1280px,
+  "lg": 1024px,
+  "md": 768px,
+  "sm": 640px,
+  "xs": 475px,
+);
+
+@mixin media($breakpoint, $param: max-width) {
+  @if map-get($breakpoints, $breakpoint) {
+    @media screen and ($param: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media screen and ($param: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin grid-cols($cols, $gap: 0px) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+  @content;
+}
+
+@mixin flex-col($x: center, $y: center, $gap: 0px) {
+  display: flex;
+  flex-direction: column;
+  align-items: $x;
+  justify-content: $y;
+  gap: $gap;
+  @content;
+}
+
+@mixin flex-row($x: center, $y: center, $gap: 0px) {
+  display: flex;
+  align-items: $y;
+  justify-content: $x;
+  gap: $gap;
+  @content;
+}
+
+@mixin start($direction: column, $gap: 0, $align: center) {
+  display: flex;
+  @if $direction == row {
+    align-items: $align;
+    justify-content: flex-start;
+  } @else {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: $align;
+  }
+  gap: $gap;
+  @content;
+}
+
+@mixin between($gap: 0px, $align: center) {
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  justify-content: space-between;
+  gap: $gap;
+  @content;
+}
+
+@mixin center($gap: 0, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin font($font-size: 1rem, $font-weight: 400, $line-height: normal) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  @content;
+}
+
+@mixin space-x($margin: 0.25rem) {
+  & > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc($margin * var(--tw-space-x-reverse));
+    margin-left: calc($margin * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+@mixin space-y($margin: 0.25rem) {
+  & > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc($margin * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc($margin * var(--tw-space-y-reverse));
+  }
+}
+
+@mixin show($selector, $selector2) {
+  section:not(#{$selector}) {
+    display: none !important;
+  }
+
+  @if $selector != header {
+    @if $selector2 != true {
+      header {
+        display: none !important;
+      }
+    }
+  }
+
+  @if $selector != footer {
+    @if $selector2 != true {
+      footer {
+        display: none !important;
+      }
+    }
+  }
+}

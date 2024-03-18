@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@300&display=swap");
+
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/lato-light.ttf) format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --font: "Lato", sans-serif;
+  --font-forum: "Forum", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --text-color: #010c17;
+  --primary: #b97816;
+  --gray: #949494;
+  --hover-color: #d6ac6c;
+  --transition: all 0.25s ease;
+}
+
+@import "base/index";
+@import "components/index";
+@import "pages/index";

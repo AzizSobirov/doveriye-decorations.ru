@@ -1,0 +1,77 @@
+---
+const reviews = [0, 1, 2, 3, 4, 5];
+---
+
+<TheSection name="reviews">
+  <H3>Отзывы</H3>
+  <P>Ваши хорошие отзывы - лучший показатель качества нашей работы</P>
+  <div class="reviews__swiper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          reviews.map((item) => (
+            <div
+              class="swiper-slide"
+              data-fancybox="reviews"
+              data-src="/assets/img/reviews/1.png"
+            >
+              <Img src="reviews/1.png" only />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="swiper-thumbs">
+      <div class="swiper-wrapper">
+        {
+          reviews.map((item) => (
+            <div class="swiper-slide">
+              <Img src="reviews/1.png" only />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="swiper-nav">
+      <div class="btn-prev">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="24" cy="24" r="24" fill="#15757B"></circle>
+          <path
+            d="M29 12C28.1612 12 20.6505 19.6667 17 23.5L29 35"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="btn-next">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="24"
+            cy="24"
+            r="24"
+            transform="rotate(-180 24 24)"
+            fill="#15757B"></circle>
+          <path
+            d="M19 36C19.8388 36 27.3495 28.3333 31 24.5L19 13"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</TheSection>

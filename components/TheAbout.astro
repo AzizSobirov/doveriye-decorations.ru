@@ -1,0 +1,44 @@
+---
+interface Props {
+  title?: boolean;
+}
+
+const { title } = Astro.props;
+---
+
+<TheSection name="about">
+  {title && <H3>О нас</H3>}
+  <Row>
+    <Col>
+      <Card>
+        <H4>Безупречная <br /> репутация</H4>
+        <P>
+          Это то, что мы заслужили за все эти годы <br />
+          своим честным трудом, профессионализмом <br />
+          и превосходным сервисом
+        </P>
+        <Img class="ucard__img" src="about/1.png" only />
+      </Card>
+      <Card>
+        <H4>Богатый <br /> опыт </H4>
+        <P>
+          За более чем 15 лет работымы <br />
+          оценили десятки тысяч элитных часов <br />
+          и выплатили более 250 000 000 $ наличными
+        </P>
+        <Img class="ucard__img" src="about/2.png" only />
+      </Card>
+    </Col>
+    <Col>
+      <Card class="last">
+        <H4>Забота <br /> о клиенте </H4>
+        <P>
+          Оперативный приём и быстрая оценка <br />
+          без лишних вопросов. <br />
+          100% конфиденциальность наших клиентов
+        </P>
+        <Img class="ucard__img" src="about/3.png" only />
+      </Card>
+    </Col>
+  </Row>
+</TheSection>

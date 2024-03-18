@@ -1,0 +1,49 @@
+---
+interface Props {
+  variant?: string;
+  type?: string;
+  label?: string;
+  action?: string;
+  onclick?: string;
+  to?: string;
+  id?: string;
+}
+
+const {
+  to,
+  label,
+  variant = "primary",
+  action = "form",
+  type = "button",
+  onclick,
+  ...rest
+} = Astro.props;
+
+const props: { [key: string]: string } = { ...rest };
+if (action == "form" && type != "link" && type != "submit") {
+  props.onclick = `openPopup('${action}')`;
+} else if (action != "false" && type != "link" && type != "submit") {
+  props.onclick = action;
+}
+if (type && type == "submit") {
+  props.type = "submit";
+}
+if (type == "link" && to) {
+  props.href = to;
+}
+
+let Tag = "button";
+if (type == "link") {
+  Tag = "a";
+} else if (type == "div") {
+  Tag = "div";
+} else if (type == "submit") {
+  Tag = "button";
+} else {
+  Tag = "button";
+}
+---
+
+<Tag class:list={"btn btn--" + variant} {...props} set:text={label}>
+  <slot />
+</Tag>

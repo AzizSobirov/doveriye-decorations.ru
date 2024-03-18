@@ -1,0 +1,116 @@
+---
+import { products } from "../index.store";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const formatPrice = (price: number) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+---
+
+<TheSection name="catalog">
+  <H1>{title}</H1>
+  <H2>ЭЛИТНЫХ УКРАШЕНИЙ</H2>
+  <div class="catalog__content">
+    <div class="catalog__filter">
+      <div class="catalog__filter-group" id="filter-collection">
+        <H5>Коллекция</H5>
+        <ul class="text-lg">
+          <li>Мужские</li>
+          <li>Женские</li>
+        </ul>
+      </div>
+      <div class="catalog__filter-group" id="filter-state">
+        <H5>Состояние</H5>
+        <ul class="text-lg">
+          <li>Новые</li>
+          <li>Б/У</li>
+        </ul>
+      </div>
+      <div class="catalog__filter-group" id="filter-type">
+        <H5>Тип</H5>
+        <ul class="text-lg">
+          <li>Колье</li>
+          <li>Кольцо</li>
+          <li>Кулон</li>
+          <li>Подвеска</li>
+          <li>Серьги</li>
+        </ul>
+      </div>
+      <div class="catalog__filter-group" id="filter-brand">
+        <H5>Бренд</H5>
+        <ul class="text-lg">
+          <li><a href="/brand">A. LANGE & SOHNE</a></li>
+          <li><a href="/brand1">AUDEMARS PIGUET</a></li>
+          <li><a href="/brand2">BELL & ROSS</a></li>
+          <li><a href="/brand3">BLANCPAIN</a></li>
+          <li><a href="/brand4">BOVET</a></li>
+          <li><a href="/brand5">BREGUET</a></li>
+          <li><a href="/brand6">A. LANGE & SOHNE</a></li>
+          <li><a href="/brand17">AUDEMARS PIGUET</a></li>
+        </ul>
+      </div>
+      <div class="catalog__filter-group" id="filter-price">
+        <H5>Цена</H5>
+        <div class="price-input">
+          <input type="number" placeholder="0" id="min-price" />
+          <input type="number" placeholder="1000000" id="max-price" />
+        </div>
+        <div class="range-slider">
+          <input
+            id="slider-min"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.0001"
+          />
+          <input
+            id="slider-max"
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+            step="0.0001"
+          />
+        </div>
+      </div>
+      <Button
+        type="link"
+        to="/catalog"
+        variant="filter"
+        label="СБРОСИТЬ ФИЛЬТР"
+      />
+    </div>
+    <div class="catalog__products" id="catalog-products">
+      {
+        products.map((item) => (
+          <div
+            class="catalog__product"
+            data-collection={item.collection}
+            data-state={item.state}
+            data-type={item.type}
+            data-price={item.price}
+          >
+            <a href="/product" class="catalog__product-img">
+              <Img src={item.img} only />
+            </a>
+            <div class="catalog__product-info">
+              <a href="/product">{item.title}</a>
+              <H5>{formatPrice(item.price)} Р</H5>
+              <Button
+                variant="black"
+                label="КУПИТЬ"
+                action="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</TheSection>

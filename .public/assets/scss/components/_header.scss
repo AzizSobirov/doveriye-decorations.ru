@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transition: var(--transition);
+  z-index: 9;
+
+  &__nav {
+    position: absolute;
+    padding: 24px 0 120px;
+    top: 0;
+    left: 0;
+    width: 94px;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid #e8e8e6;
+    @include flex-col(center, space-between, 74px);
+    z-index: 3;
+
+    & > .menu {
+      margin-bottom: auto;
+      @include center(30px, column);
+      transform: rotate(180deg);
+    }
+
+    & > .menu > .menu-item {
+      font-size: 20px;
+      font-weight: 300;
+      writing-mode: vertical-rl;
+    }
+  }
+
+  &__socials {
+    @include center(25px, column);
+  }
+
+  &__btn {
+    cursor: pointer;
+    user-select: none;
+    img:nth-child(2) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 94px;
+    transform: translate(-150%, 0);
+    width: 780px;
+    height: 100%;
+    background: #e8e8e6;
+    transition: var(--transition);
+    z-index: 2;
+    @include center;
+
+    & > .menu {
+      @include center(40px, column);
+    }
+
+    & > .menu > .menu-item {
+      font-size: 24px;
+      @include center(40px, column);
+    }
+
+    .sub-menu {
+      width: 100%;
+      text-align: center;
+      @include center(40px, column);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    left: 94px;
+    width: 100vw;
+    height: 100%;
+    background: #00000030;
+    display: none;
+  }
+
+  @include media(900px, max-height) {
+    &__nav {
+      padding: 25px 0 40px;
+      gap: 40px;
+
+      & > .menu > .menu-item {
+        font-size: 18px;
+      }
+    }
+
+    &__btn {
+      margin-top: auto;
+    }
+  }
+  @include media("1180px") {
+    &__nav,
+    &__close {
+      display: none !important;
+    }
+    &__menu {
+      padding-bottom: 60px;
+      top: 60px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - 60px);
+      transform: translate(0, 100%);
+      background: #fff;
+      overflow: auto;
+
+      & > .menu > .menu-item {
+        font-size: 20px;
+      }
+    }
+  }
+  @include media("sm") {
+    &__menu {
+      & > .menu,
+      & > .menu > .menu-item,
+      .sub-menu {
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.header-active {
+  .header__btn {
+    img:nth-child(1) {
+      display: none;
+    }
+    img:nth-child(2) {
+      display: block;
+    }
+  }
+
+  .header__menu {
+    transform: translate(0, 0);
+  }
+  .header__close {
+    display: block;
+  }
+}
+
+// .header-sticky {
+// }

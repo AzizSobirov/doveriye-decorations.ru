@@ -1,0 +1,29 @@
+---
+interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: classname, ...props } = Astro.props;
+---
+
+<div class="ucard" class:list={classname} {...props}>
+  {
+    Astro.slots.has("header") && (
+      <div class="ucard__header">
+        <slot name="header" />
+      </div>
+    )
+  }
+  <div class="ucard__content">
+    <slot />
+  </div>
+  {
+    Astro.slots.has("footer") && (
+      <div class="ucard__footer">
+        <slot name="footer" />
+      </div>
+    )
+  }
+  {Astro.slots.has("other") && <slot name="other" />}
+</div>

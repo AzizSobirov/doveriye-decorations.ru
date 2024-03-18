@@ -1,0 +1,26 @@
+---
+interface Props {
+  name: string;
+  id?: string;
+  container?: string;
+  only?: boolean;
+}
+
+const { name, container, only = false, ...rest } = Astro.props;
+---
+
+<section class={name} {...rest}>
+  {
+    only ? (
+      <slot />
+    ) : (
+      <>
+        <slot name="header" />
+        <div class="container" class:list={container}>
+          <slot />
+        </div>
+        <slot name="footer" />
+      </>
+    )
+  }
+</section>

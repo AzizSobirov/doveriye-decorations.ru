@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  formTitle?: string;
+}
+
+const { title, formTitle } = Astro.props;
+---
+
+<TheSection name="application">
+  <Card>
+    <H3>{title}</H3>
+    <slot />
+  </Card>
+  <TheForm id="form" title={formTitle} />
+</TheSection>

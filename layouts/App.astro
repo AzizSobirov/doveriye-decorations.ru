@@ -1,0 +1,37 @@
+---
+import "@assets/scss/app.scss";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const timestamp = Date.now();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My Astro template" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#b97816" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/css/fancybox.min.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <ThePopup />
+    <TheHeader />
+    <main>
+      <slot />
+    </main>
+    <TheFooter />
+
+    <script src="/assets/js/yandexmap.min.js" is:inline></script>
+    <script src="/assets/js/swiper.min.js" is:inline></script>
+    <script src="/assets/js/fancybox.min.js" is:inline></script>
+    <script src=`/assets/js/app.js?v=${timestamp}` is:inline></script>
+  </body>
+</html>
