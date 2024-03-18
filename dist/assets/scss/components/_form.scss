@@ -1,0 +1,92 @@
+.form {
+  position: relative;
+  padding: 54px 56px 36px;
+  width: 100%;
+  max-width: 745px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.25);
+  background: radial-gradient(
+    201.66% 139.36% at 100% 100%,
+    rgb(67, 67, 67) 0%,
+    rgb(208, 208, 208) 100%
+  );
+  border-radius: 20px;
+  overflow: hidden;
+  @include start(column, 15px, flex-start);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100%;
+    background: url(../img/about/bg.svg) center/contain repeat-y;
+    z-index: -1;
+  }
+
+  input {
+    padding: 18px;
+    width: 435px;
+    height: 62px;
+    font-size: 20px;
+    background: #fff;
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+
+    &[type="file"] {
+      display: none;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 10px;
+    @include start(row, 20px);
+  }
+
+  button {
+    margin: 10px 0 15px;
+  }
+
+  @include media("sm") {
+    padding: 20px;
+    gap: 10px;
+
+    &::after{
+      width: 50%;
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      font-size: 16px;
+      box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    label {
+      gap: 10px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

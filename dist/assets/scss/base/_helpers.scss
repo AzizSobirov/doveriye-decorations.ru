@@ -1,0 +1,272 @@
+// ** container ** //
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1630px;
+}
+
+// ** Displat ** //
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+// ** Size ** //
+.w-full {
+  width: 100%;
+}
+.w-1\/2 {
+  width: 50%;
+}
+
+// ** Font  ** //
+.font-light {
+  font-weight: 300;
+}
+.font-regular {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-futura {
+  font-family: "Futura", sans-serif;
+}
+
+// ** Text transform & decoration ** //
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.underline {
+  text-decoration: underline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+
+// ** Text align ** //
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+// ** Text color ** //
+.text-primary {
+  color: var(--primary);
+}
+.text-gray {
+  color: var(--gray);
+}
+.text-white {
+  color: #fff;
+}
+.text-black {
+  color: #000;
+}
+
+// ** Font sizes ** //
+.text-xs {
+  font-size: 0.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 120%;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+.text-hero {
+  color: var(--primary);
+  font-size: 200px;
+  font-family: var(--font-forum);
+  text-transform: uppercase;
+  line-height: 100%;
+  transform: translateX(-4px);
+}
+.text-h1 {
+  color: var(--primary);
+  font-size: 128px;
+  font-family: var(--font-forum);
+  text-transform: uppercase;
+}
+.text-h2 {
+  font-size: 81px;
+  font-family: var(--font-forum);
+  text-transform: uppercase;
+}
+.text-h3 {
+  font-size: 64px;
+  font-family: var(--font-forum);
+}
+.text-h4 {
+  font-size: 48px;
+  font-family: var(--font-forum);
+}
+.text-h5 {
+  color: var(--primary);
+  font-size: 32px;
+  font-family: var(--font-forum);
+}
+
+// ** Responsive ** //
+@include media("1860px") {
+  main {
+    padding-left: 94px;
+  }
+  .container {
+    max-width: 1440px;
+  }
+}
+@include media("3xl") {
+  .text-hero {
+    font-size: 128px;
+  }
+
+  .text-h3 {
+    font-size: 64px;
+  }
+}
+@include media("1580px") {
+  .container {
+    max-width: 1280px;
+  }
+
+  .text-h4 {
+    font-size: 36px;
+  }
+}
+@include media("2xl") {
+  .container {
+    max-width: 1180px;
+  }
+  .text-h3 {
+    font-size: 48px;
+  }
+}
+@include media("1380px") {
+  .container {
+    max-width: 1080px;
+  }
+}
+
+@include media("xl") {
+  .container {
+    max-width: 1024px;
+  }
+  .text-h1 {
+    font-size: 96px;
+  }
+  .text-h2 {
+    font-size: 48px;
+  }
+}
+@include media("1180px") {
+  main {
+    padding-left: 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@include media("lg") {
+  .container {
+    max-width: 768px;
+  }
+
+  .text-h2 {
+    font-size: 48px;
+  }
+}
+@include media("md") {
+  .container {
+    max-width: 640px;
+  }
+  .text-hero {
+    font-size: 96px;
+  }
+}
+@include media("sm") {
+  .container {
+    padding: 0 16px;
+    max-width: 475px;
+  }
+  .text-h1 {
+    font-size: 64px;
+  }
+  .text-h2 {
+    font-size: 36px;
+  }
+  .text-h3 {
+    font-size: 32px;
+  }
+  .text-h4 {
+    font-size: 24px;
+  }
+}
+@include media("xs") {
+  .text-h2 {
+    font-size: 28px;
+    line-height: 110%;
+  }
+}
+@include media(641px, min-width) {
+  .sm\:hidden {
+    display: none;
+  }
+  .sm\:text-base {
+    font-size: 1rem;
+  }
+  .sm\:text-lg {
+    font-size: 1.125rem;
+  }
+  .sm\:text-xl {
+    font-size: 1.25rem;
+  }
+}
+
+@include media(1281px, min-width) {
+  .xl\:block {
+    display: block;
+  }
+  .xl\:text-xl {
+    font-size: 1.25rem;
+  }
+  .xl\:text-2xl {
+    font-size: 1.5rem;
+  }
+}

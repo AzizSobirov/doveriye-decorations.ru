@@ -1,0 +1,95 @@
+.btn {
+  @include flex-row;
+  transition: var(--transition);
+  user-select: none;
+  cursor: pointer;
+
+  &--primary {
+    position: relative;
+    width: 315px;
+    height: 52px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    background: #d9b47b;
+
+    &:hover {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &--black {
+    width: 300px;
+    height: 52px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #010c17;
+    border-radius: 50px;
+
+    &:hover {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &--outline {
+    width: 265px;
+    height: 42px;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 1px solid var(--text-color);
+    border-radius: 15px;
+
+    &:hover {
+      color: #fff;
+      background: var(--text-color);
+    }
+  }
+
+  &--filter {
+    position: relative;
+    width: 230px;
+    height: 52px;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #b97816;
+    border-radius: 50px;
+
+    &:hover {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &--back {
+    width: fit-content;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  @include media("xl") {
+    &--outline {
+      padding: 0 15px;
+      width: auto;
+      height: 35px;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+  }
+  @include media("xs") {
+    &--primary,
+    &--black,
+    &--filter {
+      height: 50px;
+      width: 100%;
+    }
+  }
+  @include media("350px") {
+    &--outline {
+      font-size: 14px;
+    }
+  }
+}

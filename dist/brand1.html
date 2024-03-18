@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My Astro template" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#b97816" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/css/fancybox.min.css" />
+    <title>Бренд 1</title>
+    <link rel="stylesheet" href="/assets/css/app.pgsMlJ3J.css" />
+  </head>
+  <body>
+    <div class="popup popup--form">
+      <div class="popup__bg" onclick="closePopup('form')"></div>
+      <div class="popup__content">
+        <div class="popup__close" onclick="closePopup('form')">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 1L23.5 23.5"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M23.5 1L1 23.5"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </div>
+        <form class="form" id="form-content">
+          <div class="text-h3">Продайте украшения</div>
+          <p class="sm:text-xl">Узнайте цену своих часов всего за 15 минут</p>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ваше имя"
+            minlength="3"
+            required
+          />
+          <input
+            type="text"
+            class="v-mask"
+            name="phone"
+            id="phone"
+            placeholder="Номер телефона"
+            required
+          />
+          <label for="file-874" id="file-upload">
+            <input type="file" name="file" id="file-874" />
+            <img src="/assets/img/icons/file.svg" alt="" />
+            <span class="sm:text-xl">Добавить фото</span>
+          </label>
+          <button type="submit" class="btn btn--primary">
+            ПРОДАТЬ УКРАШЕНИЯ
+          </button>
+          <div class="text-sm">
+            Отправляя заявку я даю согласие на обработку <br />
+            персональных данных
+          </div>
+        </form>
+        <div class="form form-success" id="form-success">
+          <div class="text-h2">Спасибо</div>
+          <div class="sm:text-xl">
+            за заявку. Наши менеджеры скоро свяжуться с Вами!
+          </div>
+          <button onclick="closePopup('form')" class="btn btn--primary">
+            ЗАКРЫТЬ
+          </button>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="/" class="header__logo">
+          <img src="/assets/img/logo.svg" alt="" />
+        </a>
+        <ul class="menu">
+          <li class="menu-item"><a href="/catalog">Каталог украшений</a></li>
+          <li class="menu-item"><a href="/services">Услуги</a></li>
+          <li class="menu-item"><a href="/about">О нас</a></li>
+          <li class="menu-item"><a href="/contacts">Контакты</a></li>
+        </ul>
+        <div class="header__socials">
+          <a href="#">
+            <img src="/assets/img/icons/whatsapp.svg" alt="" />
+          </a>
+          <a href="#">
+            <img src="/assets/img/icons/telegram.svg" alt="" />
+          </a>
+        </div>
+        <div class="header__btn" onclick="toggleNav()">
+          <img src="/assets/img/icons/menu.svg" alt="" />
+          <img src="/assets/img/icons/close.svg" alt="" />
+        </div>
+      </nav>
+      <div class="header__menu">
+        <ul class="menu">
+          <li class="menu-item"><a href="/catalog">Каталог украшений</a></li>
+          <li class="menu-item menu-item-has-children">
+            <a href="/services">Услуги</a>
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="/sell">Продать ювелирные изделия</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="/about">О нас</a></li>
+          <li class="menu-item"><a href="/contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="header__close" onclick="toggleNav()"></div>
+    </header>
+    <main>
+      <div class="page-header">
+        <div class="container">
+          <div class="page-header__nav">
+            <div class="page-header__nav-btn" onclick="toggleNav()">
+              <img src="/assets/img/icons/menu.svg" alt="" />
+              <img src="/assets/img/icons/close.svg" alt="" />
+            </div>
+            <a href="/" class="page-header__nav-logo"
+              ><img src="/assets/img/logo.svg" alt=""
+            /></a>
+          </div>
+          <div class="page-header__content">
+            <a href="tel:+79888888888" class="text-xl xl:text-2xl">
+              +7 988 888-88-88
+            </a>
+            <button
+              onclick="openPopup('form', 'ЗАКАЗАТЬ ЗВОНОК')"
+              class="btn btn--outline"
+            >
+              ЗАКАЗАТЬ ЗВОНОК
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="catalog">
+        <div class="container">
+          <div class="text-h1">Бренд 1</div>
+          <div class="text-h2">ЭЛИТНЫХ УКРАШЕНИЙ</div>
+          <div class="catalog__content">
+            <div class="catalog__filter">
+              <div class="catalog__filter-group" id="filter-collection">
+                <div class="text-h5">Коллекция</div>
+                <ul class="text-lg">
+                  <li>Мужские</li>
+                  <li>Женские</li>
+                </ul>
+              </div>
+              <div class="catalog__filter-group" id="filter-state">
+                <div class="text-h5">Состояние</div>
+                <ul class="text-lg">
+                  <li>Новые</li>
+                  <li>Б/У</li>
+                </ul>
+              </div>
+              <div class="catalog__filter-group" id="filter-type">
+                <div class="text-h5">Тип</div>
+                <ul class="text-lg">
+                  <li>Колье</li>
+                  <li>Кольцо</li>
+                  <li>Кулон</li>
+                  <li>Подвеска</li>
+                  <li>Серьги</li>
+                </ul>
+              </div>
+              <div class="catalog__filter-group" id="filter-brand">
+                <div class="text-h5">Бренд</div>
+                <ul class="text-lg">
+                  <li><a href="/brand">A. LANGE & SOHNE</a></li>
+                  <li><a href="/brand1">AUDEMARS PIGUET</a></li>
+                  <li><a href="/brand2">BELL & ROSS</a></li>
+                  <li><a href="/brand3">BLANCPAIN</a></li>
+                  <li><a href="/brand4">BOVET</a></li>
+                  <li><a href="/brand5">BREGUET</a></li>
+                  <li><a href="/brand6">A. LANGE & SOHNE</a></li>
+                  <li><a href="/brand17">AUDEMARS PIGUET</a></li>
+                </ul>
+              </div>
+              <div class="catalog__filter-group" id="filter-price">
+                <div class="text-h5">Цена</div>
+                <div class="price-input">
+                  <input type="number" placeholder="0" id="min-price" />
+                  <input type="number" placeholder="1000000" id="max-price" />
+                </div>
+                <div class="range-slider">
+                  <input
+                    id="slider-min"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.0001"
+                  />
+                  <input
+                    id="slider-max"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="100"
+                    step="0.0001"
+                  />
+                </div>
+              </div>
+              <a href="/catalog" class="btn btn--filter"> СБРОСИТЬ ФИЛЬТР</a>
+            </div>
+            <div class="catalog__products" id="catalog-products">
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Колье"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Новые"
+                data-type="Серьги"
+                data-price="7888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Кольцо BVLGARI B.ZERO DIAMONDS</a>
+                  <div class="text-h5">7 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Б/У"
+                data-type="Колье"
+                data-price="1888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product"
+                    >Кулон No name С ТАНЗАНИТОМ 7.59 КАРАТА И БРИЛЛИАНТАМИ</a
+                  >
+                  <div class="text-h5">1 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Кулон"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Б/У"
+                data-type="Серьги"
+                data-price="1888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">1 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Новые"
+                data-type="Подвеска"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Колье"
+                data-price="9888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">9 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Б/У"
+                data-type="Колье"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Новые"
+                data-type="Кольцо"
+                data-price="4888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">4 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Б/У"
+                data-type="Колье"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Колье"
+                data-price="5888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">5 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Б/У"
+                data-type="Кольцо"
+                data-price="6888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">6 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Колье"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Новые"
+                data-type="Кольцо"
+                data-price="7888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">7 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Б/У"
+                data-type="Серьги"
+                data-price="1888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">1 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Кольцо"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Б/У"
+                data-type="Кулон"
+                data-price="1888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">1 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Новые"
+                data-type="Кулон"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Кулон"
+                data-price="9888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">9 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Б/У"
+                data-type="Подвеска"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Новые"
+                data-type="Подвеска"
+                data-price="4888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">4 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Б/У"
+                data-type="Подвеска"
+                data-price="3888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/1.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">3 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Мужские"
+                data-state="Новые"
+                data-type="Подвеска"
+                data-price="5888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/2.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">5 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+              <div
+                class="catalog__product"
+                data-collection="Женские"
+                data-state="Б/У"
+                data-type="Серьги"
+                data-price="6888000"
+              >
+                <a href="/product" class="catalog__product-img">
+                  <img src="/assets/img/products/3.png" alt="" />
+                </a>
+                <div class="catalog__product-info">
+                  <a href="/product">Серьги Chopard LA STRADA</a>
+                  <div class="text-h5">6 888 000 Р</div>
+                  <button
+                    onclick="openPopup('form', 'КУПИТЬ ЧАСЫ')"
+                    class="btn btn--black"
+                  >
+                    КУПИТЬ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map">
+        <div id="yamap"></div>
+        <img src="/assets/img/clock.png" alt="" />
+      </section>
+
+      <section class="bg">
+        <img src="/assets/img/bg.png" alt="" />
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer__list sm:text-xl">
+          <li>
+            <div class="text-gray">ГРАФИК</div>
+            Пн-Пт с 11:00 до 20:00 <br />
+            Сб c 12:00 до 17:00
+          </li>
+          <li>
+            <div class="text-gray">АДРЕС</div>
+            г. Санкт-Петербург, ул. Заозерная <br />
+            д 3/11
+          </li>
+          <li>
+            <div class="text-gray">ТЕЛЕФОН</div>
+            <a href="tel:+79777777777">+7 977 777-77-77</a>
+          </li>
+        </ul>
+        <div class="footer__logo">
+          <a href="/">
+            <img src="/assets/img/logo-white.svg" alt="" />
+          </a>
+          <p class="sm:text-xl">2024. Доверие</p>
+        </div>
+        <div class="footer__img">
+          <img src="/assets/img/footer-clock.png" alt="" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/yandexmap.min.js"></script>
+    <script src="/assets/js/swiper.min.js"></script>
+    <script src="/assets/js/fancybox.min.js"></script>
+    <script src="/assets/js/app.js?v=1710788072280"></script>
+  </body>
+</html>
