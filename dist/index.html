@@ -1,542 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="My Astro template" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#b97816" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="/assets/css/fancybox.min.css" />
+    <meta charset="UTF-8">
+    <meta name="description" content="My Astro template">
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="#b97816">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="/assets/css/fancybox.min.css">
     <title>Главная</title>
-    <link rel="stylesheet" href="/assets/css/app.pgsMlJ3J.css" />
-  </head>
+  <link rel="stylesheet" href="/assets/css/app.UembvH6j.css" /></head>
   <body>
     <div class="popup popup--form">
-      <div class="popup__bg" onclick="closePopup('form')"></div>
-      <div class="popup__content">
-        <div class="popup__close" onclick="closePopup('form')">
-          <svg
-            width="25"
-            height="25"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 1L23.5 23.5"
-              stroke="currentColor"
-              stroke-width="2"
-            ></path>
-            <path
-              d="M23.5 1L1 23.5"
-              stroke="currentColor"
-              stroke-width="2"
-            ></path>
-          </svg>
+  <div class="popup__bg" onclick="closePopup('form')"></div>
+  <div class="popup__content">
+    <div class="popup__close" onclick="closePopup('form')">
+      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L23.5 23.5" stroke="currentColor" stroke-width="2"></path>
+        <path d="M23.5 1L1 23.5" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+    </div>
+    <form class="form" id="form-content">
+  <div class="text-h3">
+  Продайте украшения
+</div>
+  <p class="sm:text-xl">
+  Узнайте цену своих часов всего за 15 минут
+</p>
+  <input type="text" name="name" id="name" placeholder="Ваше имя" minlength="3" required>
+  <input type="text" class="v-mask" name="phone" id="phone" placeholder="Номер телефона" required>
+  <label for="file-535" id="file-upload">
+    <input type="file" name="file" id="file-535">
+    <img src="/assets/img/icons/file.svg" alt="">
+    <span class="sm:text-xl">Добавить фото</span>
+  </label>
+  <button type="submit" class="btn btn--primary">
+ПРОДАТЬ УКРАШЕНИЯ</button>
+  <div class="text-sm">
+    Отправляя заявку я даю согласие на обработку <br> персональных данных
+  </div>
+</form>
+    <div class="form form-success" id="form-success">
+      <div class="text-h2">Спасибо</div>
+      <div class="sm:text-xl">
+        за заявку. Наши менеджеры скоро свяжуться с Вами!
+      </div>
+      <button onclick="closePopup('form')" class="btn btn--primary">
+ЗАКРЫТЬ</button>
+    </div>
+  </div>
+</div>
+    <header class="header">
+  <nav class="header__nav">
+    <a href="/" class="header__logo">
+      <img src="/assets/img/logo.svg" alt="">
+    </a>
+    <ul class="menu">
+      <li class="menu-item"><a href="/catalog">Каталог украшений</a></li>
+      <li class="menu-item"><a href="/services">Услуги</a></li>
+      <li class="menu-item"><a href="/about">О нас</a></li>
+      <li class="menu-item"><a href="/contacts">Контакты</a></li>
+    </ul>
+    <div class="header__socials">
+      <a href="#">
+        <img src="/assets/img/icons/whatsapp.svg" alt="">
+      </a>
+      <a href="#">
+        <img src="/assets/img/icons/telegram.svg" alt="">
+      </a>
+    </div>
+    <div class="header__btn" onclick="toggleNav()">
+      <img src="/assets/img/icons/menu.svg" alt="">
+      <img src="/assets/img/icons/close.svg" alt="">
+    </div>
+  </nav>
+  <div class="header__menu">
+    <ul class="menu">
+      <li class="menu-item"><a href="/catalog">Каталог украшений</a></li>
+      <li class="menu-item menu-item-has-children">
+        <a href="/services">Услуги</a>
+        <ul class="sub-menu">
+          <li class="menu-item">
+            <a href="/sell">Продать ювелирные изделия</a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="/about">О нас</a></li>
+      <li class="menu-item"><a href="/contacts">Контакты</a></li>
+    </ul>
+  </div>
+  <div class="header__close" onclick="toggleNav()"></div>
+</header>
+    <main>
+      
+  
+  <div class="page-header --main">
+  <div class="container">
+    <div class="page-header__nav">
+      <div class="page-header__nav-btn" onclick="toggleNav()">
+        <img src="/assets/img/icons/menu.svg" alt="">
+        <img src="/assets/img/icons/close.svg" alt="">
+      </div>
+      <a href="/" class="page-header__nav-logo"><img src="/assets/img/logo.svg" alt=""></a>
+    </div>
+    <div class="page-header__content">
+      <a href="tel:+79888888888" class="text-xl xl:text-2xl">
+        +7 988 888-88-88
+      </a>
+      <button onclick="openPopup('form', 'ЗАКАЗАТЬ ЗВОНОК')" class="btn btn--outline">
+ЗАКАЗАТЬ ЗВОНОК</button>
+    </div>
+  </div>
+</div>
+  
+  <section class="intro">
+  
+        
+        <div class="container">
+          
+    <div class="intro__text">
+      <div class="text-hero">ВЫКУП</div>
+      <div class="text-h2">
+  ЭЛИТНЫХ УКРАШЕНИЙ
+</div>
+      <ul class="text-xl xl:text-2xl">
+        <li>САМАЯ ЛУЧШАЯ ЦЕНА</li>
+        <li>ВЫПЛАТА НАЛИЧНЫМИ</li>
+        <li>ГАРАНТИЯ АНОНИМНОСТИ</li>
+      </ul>
+      <div class="row">
+  
+        <button onclick="openPopup('form', 'ПРОДАТЬ УКРАШЕНИЯ')" class="btn btn--primary">
+ПРОДАТЬ УКРАШЕНИЯ</button>
+        <button onclick="openPopup('form', 'КУПИТЬ УКРАШЕНИЯ')" class="btn btn--black">
+КУПИТЬ УКРАШЕНИЯ</button>
+      
+</div>
+    </div>
+    <div class="intro__product">
+      <div class="intro__product-bg">
+      <img src="/assets/img/hero/bg.png" alt="">
+      
+    </div>
+      <div class="intro__product-price">
+        <div class="text-base">До 1 000 000 $ <br> в день обращения</div>
+        <svg width="236" height="92" viewBox="0 0 236 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M235.5 91L167 22.5H42" stroke="#595959" stroke-dasharray="5 5"></path>
+          <circle cx="21.9928" cy="21.993" r="20.5" transform="rotate(2.7777 21.9928 21.993)" stroke="#595959" stroke-dasharray="5 5"></circle>
+          <path d="M15.8086 27.9141L16.7109 26.5547C16.7891 26.4375 16.8945 26.3398 17.0273 26.2617C17.1602 26.1836 17.3047 26.1445 17.4609 26.1445C17.6406 26.1445 17.8281 26.207 18.0234 26.332C18.2266 26.457 18.4531 26.6055 18.7031 26.7773C18.9609 26.9414 19.2539 27.1094 19.582 27.2812C19.9102 27.4453 20.2969 27.5664 20.7422 27.6445L21.1875 22.2891C20.6172 22.1172 20.0547 21.9258 19.5 21.7148C18.9453 21.5039 18.4453 21.2227 18 20.8711C17.5625 20.5117 17.207 20.0586 16.9336 19.5117C16.6602 18.9648 16.5234 18.2812 16.5234 17.4609C16.5234 16.8516 16.6406 16.2578 16.875 15.6797C17.1172 15.1016 17.4727 14.5859 17.9414 14.1328C18.4102 13.6719 18.9844 13.293 19.6641 12.9961C20.3438 12.6992 21.125 12.5312 22.0078 12.4922L22.1367 10.9805C22.1523 10.7852 22.2305 10.6133 22.3711 10.4648C22.5195 10.3086 22.7109 10.2305 22.9453 10.2305H24.0352L23.8359 12.5859C24.6953 12.7188 25.4297 12.9609 26.0391 13.3125C26.6562 13.6641 27.1875 14.0547 27.6328 14.4844L26.918 15.5742C26.8164 15.7305 26.707 15.8516 26.5898 15.9375C26.4805 16.0156 26.3438 16.0547 26.1797 16.0547C26.0625 16.0547 25.918 16.0195 25.7461 15.9492C25.582 15.8711 25.3945 15.7773 25.1836 15.668C24.9805 15.5586 24.7461 15.4492 24.4805 15.3398C24.2227 15.2227 23.9375 15.1289 23.625 15.0586L23.2031 20.0273C23.7812 20.207 24.3555 20.4023 24.9258 20.6133C25.4961 20.8242 26.0039 21.0977 26.4492 21.4336C26.9023 21.7695 27.2695 22.1875 27.5508 22.6875C27.832 23.1875 27.9727 23.8125 27.9727 24.5625C27.9727 25.3047 27.8477 26.0039 27.5977 26.6602C27.3477 27.3086 26.9844 27.8828 26.5078 28.3828C26.0312 28.8828 25.4414 29.293 24.7383 29.6133C24.043 29.9258 23.25 30.1094 22.3594 30.1641L22.207 31.9336C22.1992 32.1211 22.1211 32.2891 21.9727 32.4375C21.832 32.5938 21.6484 32.6719 21.4219 32.6719H20.332L20.543 30.1055C19.6055 29.9805 18.7227 29.7266 17.8945 29.3438C17.0742 28.9609 16.3789 28.4844 15.8086 27.9141ZM19.3242 17.168C19.3242 17.4727 19.375 17.7422 19.4766 17.9766C19.5781 18.2109 19.7227 18.418 19.9102 18.5977C20.0977 18.7773 20.3203 18.9375 20.5781 19.0781C20.8438 19.2188 21.1289 19.3438 21.4336 19.4531L21.8086 15.0117C21.3633 15.0664 20.9805 15.1602 20.6602 15.293C20.3477 15.4258 20.0898 15.5898 19.8867 15.7852C19.6914 15.9727 19.5469 16.1836 19.4531 16.418C19.3672 16.6523 19.3242 16.9023 19.3242 17.168ZM22.5703 27.6797C23.4219 27.5703 24.0625 27.2852 24.4922 26.8242C24.9297 26.3633 25.1484 25.7617 25.1484 25.0195C25.1484 24.7148 25.0938 24.4492 24.9844 24.2227C24.8828 23.9961 24.7305 23.7969 24.5273 23.625C24.332 23.4453 24.1016 23.293 23.8359 23.168C23.5781 23.0352 23.293 22.918 22.9805 22.8164L22.5703 27.6797Z" fill="#4F4F4F"></path>
+        </svg>
+      </div>
+      <div class="intro__product-img">
+      <img src="/assets/img/hero/1.png" alt="">
+      
+    </div>
+    </div>
+  
         </div>
-        <form class="form" id="form-content">
-          <div class="text-h3">Продайте украшения</div>
-          <p class="sm:text-xl">Узнайте цену своих часов всего за 15 минут</p>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Ваше имя"
-            minlength="3"
-            required
-          />
-          <input
-            type="text"
-            class="v-mask"
-            name="phone"
-            id="phone"
-            placeholder="Номер телефона"
-            required
-          />
-          <label for="file-532" id="file-upload">
-            <input type="file" name="file" id="file-532" />
-            <img src="/assets/img/icons/file.svg" alt="" />
-            <span class="sm:text-xl">Добавить фото</span>
-          </label>
-          <button type="submit" class="btn btn--primary">
-            ПРОДАТЬ УКРАШЕНИЯ
-          </button>
-          <div class="text-sm">
-            Отправляя заявку я даю согласие на обработку <br />
-            персональных данных
-          </div>
-        </form>
-        <div class="form form-success" id="form-success">
-          <div class="text-h2">Спасибо</div>
-          <div class="sm:text-xl">
-            за заявку. Наши менеджеры скоро свяжуться с Вами!
-          </div>
-          <button onclick="closePopup('form')" class="btn btn--primary">
-            ЗАКРЫТЬ
-          </button>
+        
+      
+</section>
+  
+  <section class="about">
+  
+        
+        <div class="container">
+          <div class="text-h3">
+  О нас
+</div><div class="row">
+  
+    <div class="col">
+  
+      <div class="ucard">
+  
+  <div class="ucard__content">
+    
+        <div class="text-h4">
+  Безупречная <br> репутация
+</div>
+        <p class="sm:text-xl">
+  
+          Это то, что мы заслужили за все эти годы <br>
+          своим честным трудом, профессионализмом <br>
+          и превосходным сервисом
+        
+</p>
+        <img class="ucard__img" src="/assets/img/about/1.png" alt="">
+      
+  </div>
+  
+  
+</div>
+      <div class="ucard">
+  
+  <div class="ucard__content">
+    
+        <div class="text-h4">
+  Богатый <br> опыт 
+</div>
+        <p class="sm:text-xl">
+  
+          За более чем 15 лет работымы <br>
+          оценили десятки тысяч элитных часов <br>
+          и выплатили более 250 000 000 $ наличными
+        
+</p>
+        <img class="ucard__img" src="/assets/img/about/2.png" alt="">
+      
+  </div>
+  
+  
+</div>
+    
+</div>
+    <div class="col">
+  
+      <div class="ucard last">
+  
+  <div class="ucard__content">
+    
+        <div class="text-h4">
+  Забота <br> о клиенте 
+</div>
+        <p class="sm:text-xl">
+  
+          Оперативный приём и быстрая оценка <br>
+          без лишних вопросов. <br>
+          100% конфиденциальность наших клиентов
+        
+</p>
+        <img class="ucard__img" src="/assets/img/about/3.png" alt="">
+      
+  </div>
+  
+  
+</div>
+    
+</div>
+  
+</div>
+
         </div>
+        
+      
+</section>
+  
+  <section class="application">
+  
+        
+        <div class="container">
+          
+  <div class="ucard">
+  
+  <div class="ucard__content">
+    
+    <div class="text-h3">
+  Выкупаем
+</div>
+    
+    <p class="sm:text-xl">
+  
+      Мы выкупаем только элитные бренды часов<br> У нас Вы можете заложить свои
+      фирменные часы<br> по выгодной цене, предварительно узнав их стоимость<br> посредством нашей экспертной оценки, либо<br> продать их дорого, получив
+      выплату наличными <br><br> Нас интересуют следующие бренды:
+      <br><br>
+      ROLEX, ULYSSE NARDIN, PATEK PHILIPPE, PIAGET<br> BREGUET, FRANCK MULLER,
+      FRANC VILA, OMEGA<br> A.LANGE & SOHNE, AUDEMARS PIGUET, ZENITH
+    
+</p>
+    <a href="/" class="btn btn--black">СПИСОК БРЕНДОВ
+</a>
+  
+  
+  </div>
+  
+  
+</div>
+  <form class="form" id="form">
+  <div class="text-h3">
+  Продайте украшения
+</div>
+  <p class="sm:text-xl">
+  Узнайте цену своих часов всего за 15 минут
+</p>
+  <input type="text" name="name" id="name" placeholder="Ваше имя" minlength="3" required>
+  <input type="text" class="v-mask" name="phone" id="phone" placeholder="Номер телефона" required>
+  <label for="file-195" id="file-upload">
+    <input type="file" name="file" id="file-195">
+    <img src="/assets/img/icons/file.svg" alt="">
+    <span class="sm:text-xl">Добавить фото</span>
+  </label>
+  <button type="submit" class="btn btn--primary">
+ПРОДАТЬ УКРАШЕНИЯ</button>
+  <div class="text-sm">
+    Отправляя заявку я даю согласие на обработку <br> персональных данных
+  </div>
+</form>
+
+        </div>
+        
+      
+</section>
+  
+  <section class="process --main">
+  
+        
+        <div class="container">
+          
+  <div class="text-h3">
+  Как мы работаем
+</div>
+  <ul class="process__list">
+    <li class="process__item">
+      <div class="process__item-order">
+        <div class="text-h4">
+  01
+</div>
+      </div>
+      <div class="text-h4">
+  Заявка
+</div>
+      <p class="sm:text-xl">
+  Оставьте заявку любым удобным для Вас способом
+</p>
+    </li>
+    <li class="process__item">
+      <div class="process__item-order">
+        <div class="text-h4">
+  02
+</div>
+      </div>
+      <div class="text-h4">
+  Консультация
+</div>
+      <p class="sm:text-xl">
+  Оговариваем детали нашей встречи
+</p>
+    </li>
+    <li class="process__item">
+      <div class="process__item-order">
+        <div class="text-h4">
+  03
+</div>
+      </div>
+      <div class="text-h4">
+  Встреча и оценка
+</div>
+      <p class="sm:text-xl">
+  Быстрая и точная оценка Ваших часов
+</p>
+    </li>
+    <li class="process__item">
+      <div class="process__item-order">
+        <div class="text-h4">
+  04
+</div>
+      </div>
+      <div class="text-h4">
+  Выплата
+</div>
+      <p class="sm:text-xl">
+  Оплата наличными без бумажной волокиты
+</p>
+    </li>
+  </ul>
+
+        </div>
+        
+      
+</section>
+  
+  <section class="reviews">
+  
+        
+        <div class="container">
+          
+  <div class="text-h3">
+  Отзывы
+</div>
+  <p class="sm:text-xl">
+  Ваши хорошие отзывы - лучший показатель качества нашей работы
+</p>
+  <div class="reviews__swiper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" data-fancybox="reviews" data-src="/assets/img/reviews/1.png">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide" data-fancybox="reviews" data-src="/assets/img/reviews/1.png">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide" data-fancybox="reviews" data-src="/assets/img/reviews/1.png">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide" data-fancybox="reviews" data-src="/assets/img/reviews/1.png">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide" data-fancybox="reviews" data-src="/assets/img/reviews/1.png">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide" data-fancybox="reviews" data-src="/assets/img/reviews/1.png">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div>
       </div>
     </div>
-    <header class="header">
-      <nav class="header__nav">
-        <a href="/" class="header__logo">
-          <img src="/assets/img/logo.svg" alt="" />
-        </a>
-        <ul class="menu">
-          <li class="menu-item"><a href="/catalog">Каталог украшений</a></li>
-          <li class="menu-item"><a href="/services">Услуги</a></li>
-          <li class="menu-item"><a href="/about">О нас</a></li>
-          <li class="menu-item"><a href="/contacts">Контакты</a></li>
-        </ul>
-        <div class="header__socials">
-          <a href="#">
-            <img src="/assets/img/icons/whatsapp.svg" alt="" />
-          </a>
-          <a href="#">
-            <img src="/assets/img/icons/telegram.svg" alt="" />
-          </a>
-        </div>
-        <div class="header__btn" onclick="toggleNav()">
-          <img src="/assets/img/icons/menu.svg" alt="" />
-          <img src="/assets/img/icons/close.svg" alt="" />
-        </div>
-      </nav>
-      <div class="header__menu">
-        <ul class="menu">
-          <li class="menu-item"><a href="/catalog">Каталог украшений</a></li>
-          <li class="menu-item menu-item-has-children">
-            <a href="/services">Услуги</a>
-            <ul class="sub-menu">
-              <li class="menu-item">
-                <a href="/sell">Продать ювелирные изделия</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-item"><a href="/about">О нас</a></li>
-          <li class="menu-item"><a href="/contacts">Контакты</a></li>
-        </ul>
+    <div class="swiper-thumbs">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div><div class="swiper-slide">
+              <img src="/assets/img/reviews/1.png" alt="">
+            </div>
       </div>
-      <div class="header__close" onclick="toggleNav()"></div>
-    </header>
-    <main>
-      <div class="page-header --main">
-        <div class="container">
-          <div class="page-header__nav">
-            <div class="page-header__nav-btn" onclick="toggleNav()">
-              <img src="/assets/img/icons/menu.svg" alt="" />
-              <img src="/assets/img/icons/close.svg" alt="" />
-            </div>
-            <a href="/" class="page-header__nav-logo"
-              ><img src="/assets/img/logo.svg" alt=""
-            /></a>
-          </div>
-          <div class="page-header__content">
-            <a href="tel:+79888888888" class="text-xl xl:text-2xl">
-              +7 988 888-88-88
-            </a>
-            <button
-              onclick="openPopup('form', 'ЗАКАЗАТЬ ЗВОНОК')"
-              class="btn btn--outline"
-            >
-              ЗАКАЗАТЬ ЗВОНОК
-            </button>
-          </div>
-        </div>
+    </div>
+    <div class="swiper-nav">
+      <div class="btn-prev">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" fill="#15757B"></circle>
+          <path d="M29 12C28.1612 12 20.6505 19.6667 17 23.5L29 35" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
       </div>
+      <div class="btn-next">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="24" transform="rotate(-180 24 24)" fill="#15757B"></circle>
+          <path d="M19 36C19.8388 36 27.3495 28.3333 31 24.5L19 13" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
 
-      <section class="intro">
-        <div class="container">
-          <div class="intro__text">
-            <div class="text-hero">ВЫКУП</div>
-            <div class="text-h2">ЭЛИТНЫХ УКРАШЕНИЙ</div>
-            <ul class="text-xl xl:text-2xl">
-              <li>САМАЯ ЛУЧШАЯ ЦЕНА</li>
-              <li>ВЫПЛАТА НАЛИЧНЫМИ</li>
-              <li>ГАРАНТИЯ АНОНИМНОСТИ</li>
-            </ul>
-            <div class="row">
-              <button
-                onclick="openPopup('form', 'ПРОДАТЬ УКРАШЕНИЯ')"
-                class="btn btn--primary"
-              >
-                ПРОДАТЬ УКРАШЕНИЯ
-              </button>
-              <button
-                onclick="openPopup('form', 'КУПИТЬ УКРАШЕНИЯ')"
-                class="btn btn--black"
-              >
-                КУПИТЬ УКРАШЕНИЯ
-              </button>
-            </div>
-          </div>
-          <div class="intro__product">
-            <div class="intro__product-bg">
-              <img src="/assets/img/hero/bg.png" alt="" />
-            </div>
-            <div class="intro__product-price">
-              <div class="text-base">
-                До 1 000 000 $ <br />
-                в день обращения
-              </div>
-              <svg
-                width="236"
-                height="92"
-                viewBox="0 0 236 92"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M235.5 91L167 22.5H42"
-                  stroke="#595959"
-                  stroke-dasharray="5 5"
-                ></path>
-                <circle
-                  cx="21.9928"
-                  cy="21.993"
-                  r="20.5"
-                  transform="rotate(2.7777 21.9928 21.993)"
-                  stroke="#595959"
-                  stroke-dasharray="5 5"
-                ></circle>
-                <path
-                  d="M15.8086 27.9141L16.7109 26.5547C16.7891 26.4375 16.8945 26.3398 17.0273 26.2617C17.1602 26.1836 17.3047 26.1445 17.4609 26.1445C17.6406 26.1445 17.8281 26.207 18.0234 26.332C18.2266 26.457 18.4531 26.6055 18.7031 26.7773C18.9609 26.9414 19.2539 27.1094 19.582 27.2812C19.9102 27.4453 20.2969 27.5664 20.7422 27.6445L21.1875 22.2891C20.6172 22.1172 20.0547 21.9258 19.5 21.7148C18.9453 21.5039 18.4453 21.2227 18 20.8711C17.5625 20.5117 17.207 20.0586 16.9336 19.5117C16.6602 18.9648 16.5234 18.2812 16.5234 17.4609C16.5234 16.8516 16.6406 16.2578 16.875 15.6797C17.1172 15.1016 17.4727 14.5859 17.9414 14.1328C18.4102 13.6719 18.9844 13.293 19.6641 12.9961C20.3438 12.6992 21.125 12.5312 22.0078 12.4922L22.1367 10.9805C22.1523 10.7852 22.2305 10.6133 22.3711 10.4648C22.5195 10.3086 22.7109 10.2305 22.9453 10.2305H24.0352L23.8359 12.5859C24.6953 12.7188 25.4297 12.9609 26.0391 13.3125C26.6562 13.6641 27.1875 14.0547 27.6328 14.4844L26.918 15.5742C26.8164 15.7305 26.707 15.8516 26.5898 15.9375C26.4805 16.0156 26.3438 16.0547 26.1797 16.0547C26.0625 16.0547 25.918 16.0195 25.7461 15.9492C25.582 15.8711 25.3945 15.7773 25.1836 15.668C24.9805 15.5586 24.7461 15.4492 24.4805 15.3398C24.2227 15.2227 23.9375 15.1289 23.625 15.0586L23.2031 20.0273C23.7812 20.207 24.3555 20.4023 24.9258 20.6133C25.4961 20.8242 26.0039 21.0977 26.4492 21.4336C26.9023 21.7695 27.2695 22.1875 27.5508 22.6875C27.832 23.1875 27.9727 23.8125 27.9727 24.5625C27.9727 25.3047 27.8477 26.0039 27.5977 26.6602C27.3477 27.3086 26.9844 27.8828 26.5078 28.3828C26.0312 28.8828 25.4414 29.293 24.7383 29.6133C24.043 29.9258 23.25 30.1094 22.3594 30.1641L22.207 31.9336C22.1992 32.1211 22.1211 32.2891 21.9727 32.4375C21.832 32.5938 21.6484 32.6719 21.4219 32.6719H20.332L20.543 30.1055C19.6055 29.9805 18.7227 29.7266 17.8945 29.3438C17.0742 28.9609 16.3789 28.4844 15.8086 27.9141ZM19.3242 17.168C19.3242 17.4727 19.375 17.7422 19.4766 17.9766C19.5781 18.2109 19.7227 18.418 19.9102 18.5977C20.0977 18.7773 20.3203 18.9375 20.5781 19.0781C20.8438 19.2188 21.1289 19.3438 21.4336 19.4531L21.8086 15.0117C21.3633 15.0664 20.9805 15.1602 20.6602 15.293C20.3477 15.4258 20.0898 15.5898 19.8867 15.7852C19.6914 15.9727 19.5469 16.1836 19.4531 16.418C19.3672 16.6523 19.3242 16.9023 19.3242 17.168ZM22.5703 27.6797C23.4219 27.5703 24.0625 27.2852 24.4922 26.8242C24.9297 26.3633 25.1484 25.7617 25.1484 25.0195C25.1484 24.7148 25.0938 24.4492 24.9844 24.2227C24.8828 23.9961 24.7305 23.7969 24.5273 23.625C24.332 23.4453 24.1016 23.293 23.8359 23.168C23.5781 23.0352 23.293 22.918 22.9805 22.8164L22.5703 27.6797Z"
-                  fill="#4F4F4F"
-                ></path>
-              </svg>
-            </div>
-            <div class="intro__product-img">
-              <img src="/assets/img/hero/1.png" alt="" />
-            </div>
-          </div>
         </div>
-      </section>
+        
+      
+</section>
+  
+  <section class="map">
+  
+  <div id="yamap"></div>
+  <img src="/assets/img/clock.png" alt="">
 
-      <section class="about">
-        <div class="container">
-          <div class="text-h3">О нас</div>
-          <div class="row">
-            <div class="col">
-              <div class="ucard">
-                <div class="ucard__content">
-                  <div class="text-h4">
-                    Безупречная <br />
-                    репутация
-                  </div>
-                  <p class="sm:text-xl">
-                    Это то, что мы заслужили за все эти годы <br />
-                    своим честным трудом, профессионализмом <br />
-                    и превосходным сервисом
-                  </p>
-                  <img
-                    class="ucard__img"
-                    src="/assets/img/about/1.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div class="ucard">
-                <div class="ucard__content">
-                  <div class="text-h4">
-                    Богатый <br />
-                    опыт
-                  </div>
-                  <p class="sm:text-xl">
-                    За более чем 15 лет работымы <br />
-                    оценили десятки тысяч элитных часов <br />
-                    и выплатили более 250 000 000 $ наличными
-                  </p>
-                  <img
-                    class="ucard__img"
-                    src="/assets/img/about/2.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="ucard last">
-                <div class="ucard__content">
-                  <div class="text-h4">
-                    Забота <br />
-                    о клиенте
-                  </div>
-                  <p class="sm:text-xl">
-                    Оперативный приём и быстрая оценка <br />
-                    без лишних вопросов. <br />
-                    100% конфиденциальность наших клиентов
-                  </p>
-                  <img
-                    class="ucard__img"
-                    src="/assets/img/about/3.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+</section>
+  
+  <section class="bg --main">
+  
+    <img src="/assets/img/bg.png" alt="">
+    <img src="/assets/img/bg.png" alt="">
+  
+</section>
 
-      <section class="application">
-        <div class="container">
-          <div class="ucard">
-            <div class="ucard__content">
-              <div class="text-h3">Выкупаем</div>
-
-              <p class="sm:text-xl">
-                Мы выкупаем только элитные бренды часов<br />
-                У нас Вы можете заложить свои фирменные часы<br />
-                по выгодной цене, предварительно узнав их стоимость<br />
-                посредством нашей экспертной оценки, либо<br />
-                продать их дорого, получив выплату наличными <br /><br />
-                Нас интересуют следующие бренды: <br /><br />
-                ROLEX, ULYSSE NARDIN, PATEK PHILIPPE, PIAGET<br />
-                BREGUET, FRANCK MULLER, FRANC VILA, OMEGA<br />
-                A.LANGE & SOHNE, AUDEMARS PIGUET, ZENITH
-              </p>
-              <a href="/" class="btn btn--black">СПИСОК БРЕНДОВ </a>
-            </div>
-          </div>
-          <form class="form" id="form">
-            <div class="text-h3">Продайте украшения</div>
-            <p class="sm:text-xl">Узнайте цену своих часов всего за 15 минут</p>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Ваше имя"
-              minlength="3"
-              required
-            />
-            <input
-              type="text"
-              class="v-mask"
-              name="phone"
-              id="phone"
-              placeholder="Номер телефона"
-              required
-            />
-            <label for="file-304" id="file-upload">
-              <input type="file" name="file" id="file-304" />
-              <img src="/assets/img/icons/file.svg" alt="" />
-              <span class="sm:text-xl">Добавить фото</span>
-            </label>
-            <button type="submit" class="btn btn--primary">
-              ПРОДАТЬ УКРАШЕНИЯ
-            </button>
-            <div class="text-sm">
-              Отправляя заявку я даю согласие на обработку <br />
-              персональных данных
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <section class="process --main">
-        <div class="container">
-          <div class="text-h3">Как мы работаем</div>
-          <ul class="process__list">
-            <li class="process__item">
-              <div class="process__item-order">
-                <div class="text-h4">01</div>
-              </div>
-              <div class="text-h4">Заявка</div>
-              <p class="sm:text-xl">
-                Оставьте заявку любым удобным для Вас способом
-              </p>
-            </li>
-            <li class="process__item">
-              <div class="process__item-order">
-                <div class="text-h4">02</div>
-              </div>
-              <div class="text-h4">Консультация</div>
-              <p class="sm:text-xl">Оговариваем детали нашей встречи</p>
-            </li>
-            <li class="process__item">
-              <div class="process__item-order">
-                <div class="text-h4">03</div>
-              </div>
-              <div class="text-h4">Встреча и оценка</div>
-              <p class="sm:text-xl">Быстрая и точная оценка Ваших часов</p>
-            </li>
-            <li class="process__item">
-              <div class="process__item-order">
-                <div class="text-h4">04</div>
-              </div>
-              <div class="text-h4">Выплата</div>
-              <p class="sm:text-xl">Оплата наличными без бумажной волокиты</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="reviews">
-        <div class="container">
-          <div class="text-h3">Отзывы</div>
-          <p class="sm:text-xl">
-            Ваши хорошие отзывы - лучший показатель качества нашей работы
-          </p>
-          <div class="reviews__swiper">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  data-fancybox="reviews"
-                  data-src="/assets/img/reviews/1.png"
-                >
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-fancybox="reviews"
-                  data-src="/assets/img/reviews/1.png"
-                >
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-fancybox="reviews"
-                  data-src="/assets/img/reviews/1.png"
-                >
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-fancybox="reviews"
-                  data-src="/assets/img/reviews/1.png"
-                >
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-fancybox="reviews"
-                  data-src="/assets/img/reviews/1.png"
-                >
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div
-                  class="swiper-slide"
-                  data-fancybox="reviews"
-                  data-src="/assets/img/reviews/1.png"
-                >
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-thumbs">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/assets/img/reviews/1.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-nav">
-              <div class="btn-prev">
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="24" cy="24" r="24" fill="#15757B"></circle>
-                  <path
-                    d="M29 12C28.1612 12 20.6505 19.6667 17 23.5L29 35"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </div>
-              <div class="btn-next">
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="24"
-                    cy="24"
-                    r="24"
-                    transform="rotate(-180 24 24)"
-                    fill="#15757B"
-                  ></circle>
-                  <path
-                    d="M19 36C19.8388 36 27.3495 28.3333 31 24.5L19 13"
-                    stroke="white"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="map">
-        <div id="yamap"></div>
-        <img src="/assets/img/clock.png" alt="" />
-      </section>
-
-      <section class="bg --main">
-        <img src="/assets/img/bg.png" alt="" />
-        <img src="/assets/img/bg.png" alt="" />
-      </section>
     </main>
     <footer class="footer">
-      <div class="container">
-        <ul class="footer__list sm:text-xl">
-          <li>
-            <div class="text-gray">ГРАФИК</div>
-            Пн-Пт с 11:00 до 20:00 <br />
-            Сб c 12:00 до 17:00
-          </li>
-          <li>
-            <div class="text-gray">АДРЕС</div>
-            г. Санкт-Петербург, ул. Заозерная <br />
-            д 3/11
-          </li>
-          <li>
-            <div class="text-gray">ТЕЛЕФОН</div>
-            <a href="tel:+79777777777">+7 977 777-77-77</a>
-          </li>
-        </ul>
-        <div class="footer__logo">
-          <a href="/">
-            <img src="/assets/img/logo-white.svg" alt="" />
-          </a>
-          <p class="sm:text-xl">2024. Доверие</p>
-        </div>
-        <div class="footer__img">
-          <img src="/assets/img/footer-clock.png" alt="" />
-        </div>
-      </div>
-    </footer>
+  <div class="container">
+    <ul class="footer__list sm:text-xl">
+      <li>
+        <div class="text-gray">ГРАФИК</div>
+        Пн-Пт с 11:00 до 20:00 <br> Сб c 12:00 до 17:00
+      </li>
+      <li>
+        <div class="text-gray">АДРЕС</div>
+        г. Санкт-Петербург, ул. Заозерная <br> д 3/11
+      </li>
+      <li>
+        <div class="text-gray">ТЕЛЕФОН</div>
+        <a href="tel:+79777777777">+7 977 777-77-77</a>
+      </li>
+    </ul>
+    <div class="footer__logo">
+      <a href="/">
+        <img src="/assets/img/logo-white.svg" alt="">
+      </a>
+      <p class="sm:text-xl">
+  2024. Доверие
+</p>
+    </div>
+    <div class="footer__img">
+      <img src="/assets/img/footer-clock.png" alt="">
+      
+    </div>
+  </div>
+</footer>
 
     <script src="/assets/js/yandexmap.min.js"></script>
     <script src="/assets/js/swiper.min.js"></script>
     <script src="/assets/js/fancybox.min.js"></script>
-    <script src="/assets/js/app.js?v=1710788072209"></script>
+    <script src="/assets/js/app.js?v=1711480785122"></script>
   </body>
 </html>

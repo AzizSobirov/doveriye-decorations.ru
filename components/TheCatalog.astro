@@ -17,74 +17,100 @@ const formatPrice = (price: number) => {
   <H2>ЭЛИТНЫХ УКРАШЕНИЙ</H2>
   <div class="catalog__content">
     <div class="catalog__filter">
-      <div class="catalog__filter-group" id="filter-collection">
-        <H5>Коллекция</H5>
-        <ul class="text-lg">
-          <li>Мужские</li>
-          <li>Женские</li>
-        </ul>
+      <div
+        class="catalog__filter-btn"
+        onclick="document.querySelector('.catalog__filter').classList.toggle('active')"
+      >
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.4857 5.82358C14.5076 5.37896 10.4922 5.37896 6.51407 5.82358C6.2449 5.85366 6.11528 6.16931 6.28562 6.37988L9.80264 10.7274C11.0625 12.2848 11.7499 14.2274 11.7499 16.2306V19.1198L13.2499 20.2198V16.2306C13.2499 14.2274 13.9373 12.2848 15.1972 10.7274L18.7142 6.37988C18.8845 6.16931 18.7549 5.85366 18.4857 5.82358ZM6.34746 4.33286C10.4364 3.87586 14.5634 3.87586 18.6523 4.33286C20.0993 4.49457 20.7961 6.19136 19.8804 7.32329L16.3633 11.6708C15.3194 12.9613 14.7499 14.5708 14.7499 16.2306V21.6999C14.7499 21.9825 14.591 22.2412 14.3389 22.3689C14.0868 22.4967 13.7843 22.4718 13.5564 22.3047L10.5564 20.1047C10.3637 19.9634 10.2499 19.7388 10.2499 19.4999V16.2306C10.2499 14.5708 9.68037 12.9613 8.63646 11.6708L5.11944 7.32329C4.20375 6.19136 4.90053 4.49457 6.34746 4.33286Z"
+            fill="#b97816"></path></svg
+        >
+        <p>Фильтр</p>
       </div>
-      <div class="catalog__filter-group" id="filter-state">
-        <H5>Состояние</H5>
-        <ul class="text-lg">
-          <li>Новые</li>
-          <li>Б/У</li>
-        </ul>
-      </div>
-      <div class="catalog__filter-group" id="filter-type">
-        <H5>Тип</H5>
-        <ul class="text-lg">
-          <li>Колье</li>
-          <li>Кольцо</li>
-          <li>Кулон</li>
-          <li>Подвеска</li>
-          <li>Серьги</li>
-        </ul>
-      </div>
-      <div class="catalog__filter-group" id="filter-brand">
-        <H5>Бренд</H5>
-        <ul class="text-lg">
-          <li><a href="/brand">A. LANGE & SOHNE</a></li>
-          <li><a href="/brand1">AUDEMARS PIGUET</a></li>
-          <li><a href="/brand2">BELL & ROSS</a></li>
-          <li><a href="/brand3">BLANCPAIN</a></li>
-          <li><a href="/brand4">BOVET</a></li>
-          <li><a href="/brand5">BREGUET</a></li>
-          <li><a href="/brand6">A. LANGE & SOHNE</a></li>
-          <li><a href="/brand17">AUDEMARS PIGUET</a></li>
-        </ul>
-      </div>
-      <div class="catalog__filter-group" id="filter-price">
-        <H5>Цена</H5>
-        <div class="price-input">
-          <input type="number" placeholder="0" id="min-price" />
-          <input type="number" placeholder="1000000" id="max-price" />
+      <div class="catalog__filter-content">
+        <div class="catalog__filter-group" id="filter-collection">
+          <H5>Коллекция</H5>
+          <ul class="text-lg">
+            <li>Мужские</li>
+            <li>Женские</li>
+          </ul>
         </div>
-        <div class="range-slider">
-          <input
-            id="slider-min"
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            step="0.0001"
-          />
-          <input
-            id="slider-max"
-            type="range"
-            min="0"
-            max="100"
-            value="100"
-            step="0.0001"
-          />
+        <div class="catalog__filter-group" id="filter-state">
+          <H5>Состояние</H5>
+          <ul class="text-lg">
+            <li>Новые</li>
+            <li>Б/У</li>
+          </ul>
         </div>
+        <div class="catalog__filter-group" id="filter-type">
+          <H5>Тип</H5>
+          <ul class="text-lg">
+            <li>Колье</li>
+            <li>Кольцо</li>
+            <li>Кулон</li>
+            <li>Подвеска</li>
+            <li>Серьги</li>
+          </ul>
+        </div>
+        <div class="catalog__filter-group" id="filter-brand">
+          <H5>Бренд</H5>
+          <ul class="text-lg">
+            <li><a href="/brand">A. LANGE & SOHNE</a></li>
+            <li><a href="/brand1">AUDEMARS PIGUET</a></li>
+            <li><a href="/brand2">BELL & ROSS</a></li>
+            <li><a href="/brand3">BLANCPAIN</a></li>
+            <li><a href="/brand4">BOVET</a></li>
+            <li><a href="/brand5">BREGUET</a></li>
+            <li><a href="/brand6">A. LANGE & SOHNE</a></li>
+            <li><a href="/brand17">AUDEMARS PIGUET</a></li>
+          </ul>
+        </div>
+        <div class="catalog__filter-group" id="filter-price">
+          <H5>Цена</H5>
+          <div class="price-input">
+            <input type="number" placeholder="0" id="min-price" />
+            <input type="number" placeholder="1000000" id="max-price" />
+          </div>
+          <div class="range-slider">
+            <input
+              id="slider-min"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.0001"
+            />
+            <input
+              id="slider-max"
+              type="range"
+              min="0"
+              max="100"
+              value="100"
+              step="0.0001"
+            />
+          </div>
+        </div>
+        <Button
+          type="link"
+          to="/catalog"
+          variant="filter"
+          label="СБРОСИТЬ ФИЛЬТР"
+        />
       </div>
-      <Button
-        type="link"
-        to="/catalog"
-        variant="filter"
-        label="СБРОСИТЬ ФИЛЬТР"
-      />
+      <div
+        class="catalog__filter-close"
+        onclick="document.querySelector('.catalog__filter').classList.toggle('active')"
+      >
+        <Img src="icons/close.svg" only />
+      </div>
     </div>
     <div class="catalog__products" id="catalog-products">
       {

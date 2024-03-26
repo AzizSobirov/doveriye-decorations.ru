@@ -72,70 +72,40 @@ class Filter {
     // collection
     let collection = url.searchParams.get("collection");
     if (collection) {
-      let isExists = false;
       this.collectionEl.forEach((item) => {
         if (item.innerHTML == collection) {
           this.collection = collection;
           item.classList.add("active");
-          isExists = true;
         } else {
           item.classList.remove("active");
         }
       });
-
-      if (!isExists) {
-        this.collection = this.collectionEl[0].innerHTML;
-        this.collectionEl[0].classList.add("active");
-      }
-    } else {
-      this.collection = this.collectionEl[0].innerHTML;
-      this.collectionEl[0].classList.add("active");
     }
 
     // state
     let state = url.searchParams.get("state");
     if (state) {
-      let isExists = false;
       this.stateEl.forEach((item) => {
         if (item.innerHTML == state) {
           this.state = state;
           item.classList.add("active");
-          isExists = true;
         } else {
           item.classList.remove("active");
         }
       });
-
-      if (!isExists) {
-        this.state = this.stateEl[0].innerHTML;
-        this.stateEl[0].classList.add("active");
-      }
-    } else {
-      this.state = this.stateEl[0].innerHTML;
-      this.stateEl[0].classList.add("active");
     }
 
     // type
     let type = url.searchParams.get("type");
     if (type) {
-      let isExists = false;
       this.typeEl.forEach((item) => {
         if (item.innerHTML == type) {
           this.type = type;
           item.classList.add("active");
-          isExists = true;
         } else {
           item.classList.remove("active");
         }
       });
-
-      if (!isExists) {
-        this.type = this.typeEl[0].innerHTML;
-        this.typeEl[0].classList.add("active");
-      }
-    } else {
-      this.type = this.typeEl[0].innerHTML;
-      this.typeEl[0].classList.add("active");
     }
 
     // brand

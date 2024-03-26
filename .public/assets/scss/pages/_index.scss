@@ -938,9 +938,26 @@
   }
 
   &__filter {
-    min-width: 225px;
-    width: 225px;
-    @include start(column, 15px);
+    &-btn {
+      height: 40px;
+      width: 100%;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      display: none;
+
+      p {
+        color: var(--primary);
+        font-size: 20px;
+        font-family: var(--font-forum);
+      }
+    }
+
+    &-content {
+      min-width: 225px;
+      width: 225px;
+      @include start(column, 15px);
+    }
+
 
     &-group {
       width: 100%;
@@ -1048,6 +1065,37 @@
     .btn {
       margin-top: 25px;
     }
+
+    &-close {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background: #00000030;
+      display: none;
+
+      img {
+        position: fixed;
+        top: 75px;
+        left: 310px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &-close-icon {
+      display: none;
+    }
+
+    &.active {
+      .catalog__filter-content {
+        transform: translate(0, 0);
+      }
+      .catalog__filter-close {
+        display: block;
+      }
+    }
   }
 
   &__products {
@@ -1121,7 +1169,7 @@
     &__content {
       flex-direction: column;
     }
-    &__filter {
+    &__filter-content {
       width: 100%;
       @include grid-cols(2, 20px);
     }
@@ -1138,12 +1186,31 @@
   @include media("sm") {
     padding: 115px 0 80px;
 
-    &__content {
-      margin-top: 30px;
+    &__filter {
+      width: 100%;
+
+      &-btn {
+        @include center(5px);
+      }
+      &-content {
+        position: fixed;
+        padding: 20px 16px 60px;
+        top: 60px;
+        left: 0;
+        width: 300px;
+        height: calc(100vh - 60px);
+        transform: translate(-100%, 0);
+        background: #fff;
+        transition: var(--transition);
+        grid-template-columns: 1fr;
+        overflow: auto;
+        z-index: 2;
+      }
     }
 
-    &__filter {
-      grid-template-columns: 1fr;
+    &__content {
+      margin-top: 30px;
+      gap: 30px;
     }
   }
   @include media("xs") {
@@ -1164,6 +1231,15 @@
       &-img {
         min-width: 60px;
       }
+    }
+    &__filter-content {
+      width: 280px;
+    }
+    &__filter-close img {
+      top: 70px;
+      left: 285px;
+      width: 20px;
+      height: 20px;
     }
   }
 }
